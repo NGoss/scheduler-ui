@@ -1,19 +1,13 @@
-import { useState, useEffect } from 'react'
-
-import Typography from '@mui/joy/Typography'
-import Link from '@mui/joy/Link'
 import Tab from '@mui/joy/Tab'
 import Tabs from '@mui/joy/Tabs'
 import TabList from '@mui/joy/Tablist'
 import TabPanel from '@mui/joy/TabPanel'
-import Breadcrumbs from '@mui/joy/Breadcrumbs'
 import Sheet from '@mui/joy/Sheet'
-import Stack from '@mui/joy/Stack'
-import HomeIcon from '@mui/icons-material/Home'
 
 import Actors from 'src/components/show/reference/Actors'
 import Scenes from 'src/components/show/reference/Scenes'
 import Characters from 'src/components/show/reference/Characters'
+import Rehearsals from 'src/components/show/reference/Rehearsals'
 
 import { useShow } from 'src/context/showContext'
 import { useTab, useTabDispatch } from 'src/context/tabContext'
@@ -58,7 +52,7 @@ function MainWorkflow() {
             color="primary">Staff</Tab>
         </TabList>
         <TabPanel value={0}>
-          Rehearsals
+          <Rehearsals />
         </TabPanel>
         <TabPanel value={1}>
           <Scenes />
