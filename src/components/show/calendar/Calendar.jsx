@@ -2,12 +2,11 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 
-export default function Calendar({ view, addRehearsal, selectDate}) {
+export default function Calendar({ view, addRehearsal, selectDate, events}) {
     return (
         <FullCalendar
             plugins={[dayGridPlugin, interactionPlugin]}
             initialView={view}
-            width="80%"
             editable="true"
             selectable="true"
             handleWindowResize="true"
@@ -28,6 +27,7 @@ export default function Calendar({ view, addRehearsal, selectDate}) {
             }}
             unselect={() => selectDate('')}
             unselectCancel="button"
+            events={events}
         />
     )
 }

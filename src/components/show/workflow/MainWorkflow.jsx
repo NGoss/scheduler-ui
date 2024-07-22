@@ -24,7 +24,7 @@ function MainWorkflow() {
 
   return (
     <>
-    <Sheet>
+    <Sheet sx={{ width: '75%' }}>
       <Tabs onChange={
           (event, newValue) => {
             tabDispatch({

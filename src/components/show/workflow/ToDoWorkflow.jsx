@@ -25,7 +25,7 @@ function ToDoWorkflow() {
 
   return (
     <>
-      <Sheet variant="outlined" sx={{ background: 'none', borderRadius: 5, p: 3}}>
+      <Sheet variant="outlined" sx={{ width: '25%', background: 'none', borderRadius: 5, p: 3}}>
         <Typography
           sx={ theme => ({
             position: 'absolute',
