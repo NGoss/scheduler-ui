@@ -49,8 +49,15 @@ function RehearsalModal({open, exitCallback, defaultDate}) {
   const createRehearsal = async (event) => {
     event.preventDefault()
     //showId, type, date, startTime, endTime, location, sceneIds
-    await rehearsalsApi.createRehearsal(show.id, event.target[1].value, event.target[2].value, event.target[3].value, event.target[4].value, event.target[6].value, JSON.parse(event.target[8].value))
-    
+    await rehearsalsApi.createRehearsal(
+      show.id,
+      event.target[1].value,
+      event.target[2].value,
+      event.target[3].value,
+      event.target[4].value,
+      event.target[6].value,
+      JSON.parse(event.target[8].value))
+
     exitCallback()
   }
 

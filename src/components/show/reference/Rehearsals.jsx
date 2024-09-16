@@ -7,7 +7,9 @@ import Calendar from 'src/components/show/calendar/Calendar'
 import { useShowDispatch, useShow } from 'src/context/showContext'
 import { useTab } from 'src/context/tabContext'
 
-import RehearsalModal from './RehearsalModal';
+import RehearsalModal from './RehearsalModal'
+
+import moment from 'moment'
 
 function Rehearsals() {
 
@@ -15,10 +17,15 @@ function Rehearsals() {
   const [adding, setAdding] = useState(false)
   const [selectedDate, setSelectedDate] = useState('')
 
-  const events = show.rehearsals.map((r) => {
+  const mapRehearsalToCalendarEvent = (rehearsal) => {
     return {
+      title: rehearsal.type + " " +
+        rehearsal.scenes.reduce((accumulator, currentValue) => accumulator + " " + currentValue.name, "").trim(),
+      date: moment(rehearsal.start).format('YYYY-MM-DD')
     }
-  })
+  }
+
+  const events = show.rehearsals.map(mapRehearsalToCalendarEvent)
   return (
     <>
       <RehearsalModal defaultDate={selectedDate} open={adding} exitCallback={() => setAdding(false)}/>
